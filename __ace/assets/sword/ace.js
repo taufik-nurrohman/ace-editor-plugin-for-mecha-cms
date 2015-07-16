@@ -63,6 +63,7 @@
             }
         });
         editor.renderer.setShowGutter(ACE_CONFIG_STATE_SHOW_GUTTER);
+        editor.renderer.setDisplayIndentGuides(ACE_CONFIG_STATE_SHOW_INDENT_GUIDE);
     }
     function run() {
         for (var i in base.editors) {

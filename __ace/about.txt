@@ -1,0 +1,20 @@
+Title: Ace Editor
+Author: Taufik Nurrohman
+URL: http://latitudu.com
+Version: 0.0.0
+
+====
+
+> Replace your default source code editor with Ace!
+
+**Ace** is an embeddable code editor written in JavaScript. It matches the features and performance of native editors such as Sublime, Vim and TextMate. It can be easily embedded in any web page and JavaScript application. Ace is maintained as the primary editor for [Cloud9 IDE](http://c9.io "Cloud9") and is the successor of the Mozilla Skywriter (Bespin) project.
+
+**Reference:** <http://ace.c9.io>
+
+---
+
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+  <input name="cmd" type="hidden" value="_s-xclick">
+  <input name="hosted_button_id" type="hidden" value="TNVGH7NQ7E4EU">
+  <input name="submit" type="image" class="help" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" alt="PayPal &ndash; The safer, easier way to pay online!" title="&lt;b&gt;Mecha&lt;/b&gt; need to eat a lot!"><img alt="" src="https://www.paypalobjects.com/id_ID/i/scr/pixel.gif" width="1" height="1">
+</form>

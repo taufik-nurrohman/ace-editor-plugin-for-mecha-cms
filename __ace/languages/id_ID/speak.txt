@@ -1,0 +1,10 @@
+plugin_ace:
+  0: Tema
+  1: Ukuran Tab
+  2:
+    0: Mode Ganti Baris
+    1: Tandai Baris yang Aktif
+    2: Tampilkan Baris Angka
+    3: Tampilkan Widget Lipat
+    4: Tampilkan Panduan Indentasi
+    5: Tampilkan Karakter Tersembunyi

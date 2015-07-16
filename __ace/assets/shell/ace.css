@@ -1,0 +1,24 @@
+.ace_editor,
+.ace_editor-placeholder {font:normal normal 12px/1.4 "Courier New",Courier,"Nimbus Mono L",Monospace !important}
+
+.ace_editor-placeholder {
+  display:block;
+  padding:0;
+  border:none;
+  outline:none;
+  background:none;
+  color:inherit;
+}
+
+.ace_editor-controls {
+  display:block;
+  margin-bottom:.5em;
+  font-size:86%;
+}
+
+.ace_editor-controls label {
+  display:block;
+  float:left;
+}
+
+.ace_editor-controls label + label {margin-left:1em}

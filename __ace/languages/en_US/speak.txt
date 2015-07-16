@@ -1,0 +1,10 @@
+plugin_ace:
+  0: Theme
+  1: Tab Size
+  2:
+    0: Wrap Mode
+    1: Highlight Active Line
+    2: Show Line Number
+    3: Show Fold Widget
+    4: Show Indent Guide
+    5: Show Invisible Character

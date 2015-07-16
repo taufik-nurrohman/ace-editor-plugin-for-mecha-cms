@@ -1,0 +1,1 @@
+a:3:{s:5:"theme";s:14:"tomorrow_night";s:8:"tab_size";i:2;s:5:"state";a:6:{s:13:"use_wrap_mode";i:1;s:21:"highlight_active_line";i:1;s:11:"show_gutter";i:1;s:16:"show_fold_widget";i:1;s:17:"show_indent_guide";i:0;s:14:"show_invisible";i:0;}}

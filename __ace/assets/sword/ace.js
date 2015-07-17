@@ -1,27 +1,19 @@
 (function(w, d, base) {
-    if (typeof base.editor === "undefined") return;
+    if (!base.editors || !base.editors.length) return;
     function apply(area, i) {
-        var hidden = !area || !area.offsetHeight && !area.offsetHeight;
+        var hidden = !area || !area.offsetWidth || !area.offsetHeight;
         if (hidden || /(^|\s)ace_editor-active(\s|$)/.test(area.className)) return;
+        area.className += ' ace_editor-active';
         var area_ace = d.createElement('div'),
-            height = area.offsetHeight,
             id = 'ace-' + (new Date()).getTime() + '-' + i,
+            height = area.scrollHeight,
             mode = 'html',
             editor, name;
-        area.className += ' ace_editor-active';
         area.style.display = 'none';
         area_ace.id = id;
         area_ace.className += 'ace_editor ace_editor-placeholder';
-        area_ace.innerHTML = area.value
-            .replace(/^\n+|\n+$/, "")
-            .replace(/&/g, '&amp;')
-            .replace(/</g, '&lt;')
-            .replace(/>/g, '&gt;')
-            .replace(/ /g, '&nbsp;')
-            .replace(/\r/g, "")
-            .replace(/\n/g, '<br>');
         area.parentNode.appendChild(area_ace);
-        area_ace.style.height = (area_ace.offsetHeight > height ? area_ace.offsetHeight : height) + 'px';
+        area_ace.style.height = height + 'px';
         // trying to get the file name extension on the page ...
         if (area.name === 'content') { // `<textarea name="content">`
             name = d.getElementsByName('name'); // `<input name="name" type="text">`

@@ -5,15 +5,15 @@
         if (hidden || /(^|\s)ace_editor-active(\s|$)/.test(area.className)) return;
         area.className += ' ace_editor-active';
         var area_ace = d.createElement('div'),
+            height = area.offsetHeight,
             id = 'ace-' + (new Date()).getTime() + '-' + i,
-            height = area.scrollHeight,
             mode = 'html',
             editor, name;
         area.style.display = 'none';
         area_ace.id = id;
         area_ace.className += 'ace_editor ace_editor-placeholder';
         area.parentNode.appendChild(area_ace);
-        area_ace.style.height = height + 'px';
+        area_ace.style.height = (height * 2) + 'px';
         // trying to get the file name extension on the page ...
         if (area.name === 'content') { // `<textarea name="content">`
             name = d.getElementsByName('name'); // `<input name="name" type="text">`

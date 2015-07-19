@@ -13,7 +13,7 @@
         area_ace.id = id;
         area_ace.className += 'ace_editor ace_editor-placeholder';
         area.parentNode.appendChild(area_ace);
-        area_ace.style.height = (height * 2) + 'px';
+        area_ace.style.height = height + 'px';
         // trying to get the file name extension on the page ...
         if (area.name === 'content') { // `<textarea name="content">`
             name = d.getElementsByName('name'); // `<input name="name" type="text">`

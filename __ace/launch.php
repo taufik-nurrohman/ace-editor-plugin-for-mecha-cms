@@ -27,7 +27,6 @@ Route::accept($config->manager->slug . '/plugin/' . File::B(__DIR__) . '/update'
             $request['state'] = array();
         }
         $request['state'] = array_merge($ace_config_default['state'], $request['state']);
-        $request['tab_size'] = (int) str_replace('size_', "", $request['tab_size']);
         File::serialize($request)->saveTo($state . 'config.txt', 0600);
         Notify::success(Config::speak('notify_success_updated', $speak->plugin));
         Guardian::kick(File::D($config->url_current));

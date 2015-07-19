@@ -10,9 +10,9 @@
   <label class="grid-group">
     <span class="grid span-1 form-label"><?php echo $ace_speak[1]; ?></span>
     <span class="grid span-5"><?php echo Form::select('tab_size', array(
-        'size_2' => '2',
-        'size_4' => '4'
-    ), 'size_' . $ace_config['tab_size']); ?></span>
+        2 => '2',
+        4 => '4'
+    ), $ace_config['tab_size']); ?></span>
   </label>
   <div class="grid-group">
     <span class="grid span-1"></span>

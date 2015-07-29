@@ -1,13 +1,13 @@
 (function(w, d, base) {
-    if (!base.editors || !base.editors.length) return;
+    if (!base.editor || !base.editors || !base.editors.length) return;
     function apply(area, i) {
         var hidden = !area || !area.offsetWidth || !area.offsetHeight;
         if (hidden || /(^|\s)ace_editor-active(\s|$)/.test(area.className)) return;
         area.className += ' ace_editor-active';
         var area_ace = d.createElement('div'),
-            height = area.offsetHeight,
+            height = area.offsetHeight * 2,
             id = 'ace-' + (new Date()).getTime() + '-' + i,
-            mode = 'html',
+            mode = (area.name || 'plain_text').replace('[]', ""),
             editor, name;
         area.style.display = 'none';
         area_ace.id = id;
@@ -17,7 +17,7 @@
         // trying to get the file name extension on the page ...
         if (area.name === 'content') { // `<textarea name="content">`
             name = d.getElementsByName('name'); // `<input name="name" type="text">`
-            if (name.length && name[0].type === 'text' && name[0].value.length) {
+            if (name.length && name[0].value.length) {
                 mode = base.task.file.E(name[0].value);
             }
         }
@@ -32,15 +32,16 @@
             'draft': 'html',
             'hold': 'html',
             'js': 'javascript',
-            'mkd': 'html',
-            'mkdown': 'html',
-            'txt': 'html'
+            'mkd': 'markdown',
+            'mkdown': 'markdown',
+            'txt': 'markdown'
         };
         mode = typeof modes[mode] !== "undefined" ? modes[mode] : mode;
-        if (mode === 'css' && area.value.indexOf('</style>') !== -1) mode = 'html';
-        if (mode === 'javascript' && area.value.indexOf('</script>') !== -1) mode = 'html';
+        if (mode.match(/^plain_text|css$/) && area.value.indexOf('</style>') !== -1) mode = 'html';
+        if (mode.match(/^plain_text|javascript$/) && area.value.indexOf('</script>') !== -1) mode = 'html';
         editor = ace.edit(id); // init!
         editor.setTheme('ace/theme/' + ACE_CONFIG_THEME);
+        editor.setShowFoldWidgets(ACE_CONFIG_STATE_SHOW_FOLD_WIDGET);
         editor.setHighlightActiveLine(ACE_CONFIG_STATE_HIGHLIGHT_ACTIVE_LINE);
         editor.getSession().setMode('ace/mode/' + mode);
         editor.getSession().setTabSize(ACE_CONFIG_TAB_SIZE);
@@ -54,6 +55,8 @@
                 jQuery(area).trigger("keyup");
             }
         });
+        editor.setOption('selectionStyle', 'text'); // watch for unused white-space(s) before line break(s)
+        editor.renderer.setShowInvisibles(ACE_CONFIG_STATE_SHOW_INVISIBLE);
         editor.renderer.setShowGutter(ACE_CONFIG_STATE_SHOW_GUTTER);
         editor.renderer.setDisplayIndentGuides(ACE_CONFIG_STATE_SHOW_INDENT_GUIDE);
     }

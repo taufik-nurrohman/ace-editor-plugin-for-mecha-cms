@@ -1,13 +1,1 @@
-.ace_editor,
-.ace_editor-active,
-.ace_editor-placeholder {font:normal normal 12px/1.4 "Courier New",Courier,"Nimbus Mono L",Monospace !important}
-
-.ace_editor-active,
-.ace_editor-placeholder {
-  display:block;
-  padding:0;
-  border:none;
-  outline:none;
-  background:none;
-  color:inherit;
-}
+.ace_editor {border:1px solid}

@@ -2,7 +2,7 @@
   <?php echo Form::hidden('token', $token); ?>
   <?php $ace_speak = Mecha::A($speak->plugin_ace); ?>
   <?php $ace_config = File::open(PLUGIN . DS . File::B(__DIR__) . DS . 'states' . DS . 'config.txt')->unserialize(); ?>
-  <?php $ace_config_default = include PLUGIN . DS . File::B(__DIR__) . DS . 'states' . DS . 'repair.state.config.php'; ?>
+  <?php $ace_config_default = include PLUGIN . DS . File::B(__DIR__) . DS . 'workers' . DS . 'repair.state.config.php'; ?>
   <label class="grid-group">
     <span class="grid span-1 form-label"><?php echo $ace_speak[0]; ?></span>
     <span class="grid span-5"><?php echo Form::select('theme', Mecha::eat($ace_config_default['theme'])->order('ASC')->vomit(), $ace_config['theme']); ?></span>

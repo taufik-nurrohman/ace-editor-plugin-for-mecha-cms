@@ -3,4 +3,6 @@ Ace Editor Plugin for Mecha CMS
 
 > Replace your default source code editor with Ace!
 
-Upload the `__ace` folder along with its contents through the plugin uploader. You need to compress the folder into a ZIP file to simplify the uploading process. After that, go to the plugin manager page and follow the instructions on the **About** tab.
+**Ace** is an embeddable code editor written in JavaScript. It matches the features and performance of native editors such as Sublime, Vim and TextMate. It can be easily embedded in any web page and JavaScript application. Ace is maintained as the primary editor for [Cloud9 IDE](http://c9.io "Cloud9") and is the successor of the Mozilla Skywriter (Bespin) project.
+
+**Reference:** <http://ace.c9.io>
